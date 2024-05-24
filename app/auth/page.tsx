@@ -2,7 +2,7 @@
 import React from "react";
 import { TextField, Container, Typography, Box } from "@mui/material";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/app/db/firebase";
