@@ -4,7 +4,11 @@ import { NextUIProvider } from "@nextui-org/system";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 import { Layout } from "../components/layout/layout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./db/firebase";
+import { redirect, useRouter } from "next/navigation";
+import type { NextPage } from "next";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -12,7 +16,19 @@ export interface ProvidersProps {
 }
 
 export function Providers({ children, themeProps }: ProvidersProps) {
-  const [islogin, setIslogin] = useState(true);
+  const { push } = useRouter();
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setIslogin(true);
+      } else {
+        push("/auth");
+      }
+    });
+  }, []);
+
+  const [islogin, setIslogin] = useState(false);
   return (
     <NextUIProvider>
       <NextThemesProvider

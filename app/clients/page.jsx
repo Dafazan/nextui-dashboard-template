@@ -21,7 +21,23 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+
+import { redirect, useRouter } from "next/navigation";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/app/db/firebase";
+
 function Clients() {
+  const [isLoginSuceed, setIsLoginSuceed] = useState(false);
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setIsLoginSuceed(true);
+      }
+    });
+  }, []);
+
    //data brand
   const [brand, setBrand] = useState([]);
   const [title, setTitle] = useState("");
@@ -108,6 +124,8 @@ function Clients() {
 
   
   return (
+    <>
+    {isLoginSuceed? (<>
     <div className="p-5 flex flex-col gap-5">
      {isClient ==true? <>
       <Box
@@ -179,6 +197,8 @@ function Clients() {
       </div>
      </>:null}
     </div>
+      </>):null}
+    </>
   );
 }
 
