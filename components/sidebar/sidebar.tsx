@@ -60,13 +60,15 @@ export const SidebarWrapper = () => {
                 isActive={pathname === "/blogs"}
                 title="Info & News"
                 icon={<ReportsIcon />}
-                href="blogs"
+                href="/blogs"
               />
               <SidebarItem
-                isActive={pathname === "/portofolio"}
+                isActive={
+                  pathname === "/portofolio" || pathname === "/portofolio/new"
+                }
                 title="Portofolio"
                 icon={<ProductsIcon />}
-                href="portofolio"
+                href="/portofolio"
               />
             </SidebarMenu>
             <SidebarMenu title="Tools">
@@ -74,13 +76,13 @@ export const SidebarWrapper = () => {
                 isActive={pathname === "/qrgenerate"}
                 title="QR Generator"
                 icon={<ViewIcon />}
-                href="qrgenerate"
+                href="/qrgenerate"
               />
               <SidebarItem
                 isActive={pathname === "/urlgenerate"}
                 title="URL Generator"
                 icon={<DevIcon />}
-                href="urlgenerate"
+                href="/urlgenerate"
               />
             </SidebarMenu>
             <SidebarMenu title="Site Settings">
@@ -88,25 +90,25 @@ export const SidebarWrapper = () => {
                 isActive={pathname === "/clients"}
                 title="Clients"
                 icon={<CustomersIcon />}
-                href="clients"
+                href="/clients"
               />
               <SidebarItem
                 isActive={pathname === "/partner"}
                 title="Partners"
                 icon={<CustomersIcon />}
-                href="partner"
+                href="/partner"
               />
               <SidebarItem
                 isActive={pathname === "/images"}
                 title="Images"
                 icon={<BalanceIcon />}
-                href="images"
+                href="/images"
               />
               <SidebarItem
                 isActive={pathname === "/texts"}
                 title="Paragraph & Titles"
                 icon={<SettingsIcon />}
-                href="texts"
+                href="/texts"
               />
             </SidebarMenu>
 
@@ -115,13 +117,13 @@ export const SidebarWrapper = () => {
                 isActive={pathname === "/account"}
                 title="My Account"
                 icon={<AccountsIcon />}
-                href="account"
+                href="/account"
               />
               <SidebarItem
                 isActive={pathname === "/accounts"}
                 title="Register Account"
                 icon={<AccountsIcon />}
-                href="accounts"
+                href="/accounts"
               />
               <button
                 className="w-full py-2 bg-red-500 rounded-xl"
