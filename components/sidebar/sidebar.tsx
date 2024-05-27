@@ -22,6 +22,9 @@ import { usePathname } from "next/navigation";
 import { Community } from "../icons/community";
 import { InfoIcon } from "../icons/accounts/info-icon";
 import { logout } from "@/app/db/firebase";
+import { PanToolSharp } from "@mui/icons-material";
+import { MenuList } from "@mui/material";
+import { ChevronUpIcon } from "../icons/sidebar/chevron-up-icon";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -54,37 +57,63 @@ export const SidebarWrapper = () => {
             />
             <SidebarMenu title="Posts">
               <SidebarItem
+                isActive={pathname === "/blogs"}
+                title="Info & News"
+                icon={<ReportsIcon />}
+                href="blogs"
+              />
+              <SidebarItem
                 isActive={pathname === "/portofolio"}
                 title="Portofolio"
                 icon={<ProductsIcon />}
                 href="portofolio"
               />
+            </SidebarMenu>
+            <SidebarMenu title="Tools">
               <SidebarItem
-                isActive={pathname === "/Blogs"}
-                title="Blogs"
-                icon={<ReportsIcon />}
-                href="Blogs"
+                isActive={pathname === "/qrgenerate"}
+                title="QR Generator"
+                icon={<ViewIcon />}
+                href="qrgenerate"
+              />
+              <SidebarItem
+                isActive={pathname === "/urlgenerate"}
+                title="URL Generator"
+                icon={<DevIcon />}
+                href="urlgenerate"
               />
             </SidebarMenu>
-            <SidebarMenu title="Images">
+            <SidebarMenu title="Site Settings">
               <SidebarItem
                 isActive={pathname === "/clients"}
-                title="clients"
+                title="Clients"
                 icon={<CustomersIcon />}
                 href="clients"
               />
               <SidebarItem
                 isActive={pathname === "/partner"}
-                title="partners"
+                title="Partners"
                 icon={<CustomersIcon />}
                 href="partner"
               />
+              <SidebarItem
+                isActive={pathname === "/images"}
+                title="Images"
+                icon={<BalanceIcon />}
+                href="images"
+              />
+              <SidebarItem
+                isActive={pathname === "/texts"}
+                title="Paragraph & Titles"
+                icon={<SettingsIcon />}
+                href="texts"
+              />
             </SidebarMenu>
 
-            <SidebarMenu title="Pages">
+            <SidebarMenu title="Account Settings">
               <SidebarItem
                 isActive={pathname === "/account"}
-                title="Account"
+                title="My Account"
                 icon={<AccountsIcon />}
                 href="account"
               />

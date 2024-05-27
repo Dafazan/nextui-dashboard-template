@@ -39,7 +39,7 @@ export const NavbarWrapper = ({ children }: Props) => {
         <NavbarContent className="md:hidden">
           <BurguerButton />
         </NavbarContent>
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full ms-7 md:ms-0">
           {isLoginSuceed ? (
             <>
               <p>HALO GEEES!</p>
