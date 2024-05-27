@@ -24,7 +24,7 @@ interface Portfolios {
   id: string;
   img: string;
   title: string;
-  desc: string;
+  description: string;
   // Add more properties as needed
 }
 function Blogs() {
@@ -83,7 +83,8 @@ function Blogs() {
                 del={""}
                 img={data.img}
                 title={data.title}
-                desc={data.desc}
+                desc={data.description}
+                link={`/portofolio/${data.id}`}
               />
             </div>
           </>

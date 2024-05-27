@@ -11,11 +11,13 @@ function PostcardHPorto({
   img,
   del,
   desc,
+  link,
 }: {
   title: string;
   img: string;
   del: any;
   desc: any;
+  link: string;
 }) {
   return (
     <>
@@ -31,9 +33,12 @@ function PostcardHPorto({
           <p className="text-xs line-clamp-2 mb-2">{desc}</p>
         </div>
         <div className="flex flex-col gap-2">
-          <button className="bg-green-500 rounded-sm text-white w-full py-1 px-5">
+          <a
+            href={link}
+            className="bg-green-500 rounded-sm text-white w-full py-1 px-5"
+          >
             VIEW
-          </button>
+          </a>
           <button className="bg-blue-500 rounded-sm text-white w-full py-1 px-5">
             EDIT
           </button>

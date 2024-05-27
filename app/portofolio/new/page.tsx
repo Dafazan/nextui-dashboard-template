@@ -35,7 +35,7 @@ const New: React.FC = () => {
   const [downloadURL, setDownloadURL] = useState<string>("");
   const [topImagePreview, setTopImagePreview] = useState<string>(""); // state for top image preview
 
-  // progress
+  // progressaaaaa
   const [percent, setPercent] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
 
