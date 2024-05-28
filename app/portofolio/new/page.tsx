@@ -6,6 +6,7 @@ import { db, storage } from "@/app/db/firebase";
 import { format } from "date-fns";
 import { TextField } from "@mui/material";
 import Quilltext from "@/components/quill/quil";
+import { redirect, useRouter } from "next/navigation";
 
 interface Image {
   img: string;
@@ -19,6 +20,7 @@ interface Content {
 
 const New: React.FC = () => {
   const [isAlert, setIsAlert] = useState<boolean>(false);
+
   const openAlert = () => setIsAlert(true);
   const closeAlert = () => setIsAlert(false);
 
@@ -117,7 +119,8 @@ const New: React.FC = () => {
       setLoading(false);
     }
   };
-
+  const { push } = useRouter();
+  const router = useRouter();
   const addData = async (e: FormEvent) => {
     e.preventDefault();
     const today = new Date();
@@ -132,6 +135,7 @@ const New: React.FC = () => {
     });
 
     alert("success");
+    push("/portofolio");
   };
 
   const handleClickImg = (i: number) => {

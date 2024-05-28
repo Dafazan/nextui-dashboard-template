@@ -35,7 +35,8 @@ function Blogs() {
   async function getPortfolios() {
     try {
       const ordersRef = collection(db, "portfolio");
-      const q = query(ordersRef);
+      // Add orderBy clause to the query
+      const q = query(ordersRef, orderBy("createdAt", "desc")); // or "asc" for ascending order
       const querySnapshot = await getDocs(q);
 
       if (querySnapshot.empty) {
@@ -80,11 +81,26 @@ function Blogs() {
           <>
             <div className="">
               <PostcardHPorto
-                del={""}
+                del={async (e: any) => {
+                  const confirmed = window.confirm(
+                    "Are you sure you want to delete this item?"
+                  );
+                  if (confirmed) {
+                    try {
+                      // Delete the todo document with the given ID from the "todos" collection in Firestore.
+                      await deleteDoc(doc(db, "portfolio", data.id));
+                      alert("delete success");
+                      location.reload();
+                    } catch (error) {
+                      console.error("An error occured", error);
+                    }
+                  }
+                }}
                 img={data.img}
                 title={data.title}
                 desc={data.description}
                 link={`/portofolio/${data.id}`}
+                edit={`/portofolio/edit/${data.id}`}
               />
             </div>
           </>
