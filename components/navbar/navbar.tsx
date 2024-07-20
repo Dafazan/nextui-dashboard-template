@@ -11,6 +11,7 @@ import { NotificationsDropdown } from "./notifications-dropdown";
 import { UserDropdown } from "./user-dropdown";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/app/db/firebase";
+import Greetings from "./greetings";
 
 interface Props {
   children: React.ReactNode;
@@ -43,7 +44,7 @@ export const NavbarWrapper = ({ children }: Props) => {
           {isLoginSuceed ? (
             <>
               <p>HALO GEEES!</p>
-              <p>Halo pak user</p>
+              <Greetings />
             </>
           ) : null}
         </div>
