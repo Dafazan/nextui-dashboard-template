@@ -23,10 +23,7 @@ const Home: NextPage = () => {
       {isLoginSuceed ? (
         <>
           <div className="p-5">
-            <p>
-              Home nya kosong dulu euy, yang bisa dipake baru create dan delete
-              clients
-            </p>
+            <p>Kosong</p>
           </div>
         </>
       ) : (
