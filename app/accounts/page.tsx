@@ -68,7 +68,7 @@ const SignUpForm: React.FC = () => {
   }
   const [isAuthChecked, setIsAuthChecked] = useState(false);
   const [hasTargetUid, setHasTargetUid] = useState(false);
-  const targetUid = "MXojjv0AlBfRl1j1tJuxKJXIEdx2"; // Replace with the UID you want to check
+  const targetUid = "t7QQWKwjORhobvD3PEwBIYaVeEf2"; // Replace with the UID you want to check
 
   useEffect(() => {
     const auth = getAuth();
