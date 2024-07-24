@@ -5,6 +5,7 @@ import { Content } from "@/components/home/content";
 import { redirect, useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./db/firebase";
+import Calendars from "@/components/home/calendar";
 
 const Home: NextPage = () => {
   const [isLoginSuceed, setIsLoginSuceed] = useState(false);
@@ -23,7 +24,9 @@ const Home: NextPage = () => {
       {isLoginSuceed ? (
         <>
           <div className="p-5">
-            <p>Kosong</p>
+            <div className="border border-white rounded-md p-3">
+              <Calendars />
+            </div>
           </div>
         </>
       ) : (
