@@ -74,7 +74,7 @@ function Services() {
             label="Service Description"
             multiline
             rows={4}
-            value={servicedesc2}
+            value={servicedesc1}
             sx={{ width: "100%" }}
             onChange={(e) => setServicedesc1(e.target.value)}
             required
