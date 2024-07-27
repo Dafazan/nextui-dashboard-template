@@ -23,7 +23,7 @@
     "date-fns": "^3.6.0",
     "firebase": "^10.12.1",
     "firebase-admin": "^12.1.1",
-    "framer-motion": "^10.16.0",
+    "framer-motion": "^10.18.0",
     "fullcalendar": "^6.1.15",
     "html2canvas": "^1.4.1",
     "moment": "^2.30.1",
